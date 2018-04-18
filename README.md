@@ -4,7 +4,7 @@
 
 - [React](https://reactjs.org/)
 - [Flux](https://facebook.github.io/flux/docs/overview.html)
-- [React Route](https://reacttraining.com/react-router/)
+- [React Router](https://reacttraining.com/react-router/)
 
 
 ### 環境構築  
@@ -16,7 +16,7 @@ npx create-react-app react-flux-my-app
 cd react-flux-my-app
 ```
 
-`npm start` を実行するとブラウザが立ち上がって `Welcome to React` という画面が表示される  
+`yarn start` を実行するとブラウザが立ち上がって `Welcome to React` という画面が表示される  
 環境構築はここまでで一旦終わり。  
 
 
@@ -73,7 +73,7 @@ class App extends Component {
   }
 
   valueChanged(e) {
-    let state = Object.assign({}, this.state);
+    const state = Object.assign({}, this.state);
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
@@ -114,7 +114,7 @@ export default App;
 ※ プロジェクト直下で実行すること（package.jsonがあることを確認する）
 
 ```
-npm install flux
+yarn add flux
 ```
 
 `generator` ディレクトリをコピーして、 `generator/scaffold.sh` に実行権限を追加
@@ -170,7 +170,7 @@ ReactDOM.render(<AppContainer />, document.getElementById('root'));
 
 `core` ディレクトリを作成し、`core/AppDispatcher.js` をコピーする。
 
-コピー後、 `npm start` を実行し画面が表示されることを確認。
+コピー後、 `yarn start` を実行し画面が表示されることを確認。
 
 ここまでできたらログイン画面を作る前に、React Routerを導入する。
 
@@ -182,8 +182,8 @@ ReactDOM.render(<AppContainer />, document.getElementById('root'));
 ※ プロジェクト直下で実行すること（package.jsonがあることを確認する）  
 
 ```
-npm install react-router
-npm install react-router-dom
+yarn addreact-router
+yarn add react-router-dom
 ```
 
 `Login` ページとログイン後の `Main` ページの雛形を作る。  
@@ -259,7 +259,7 @@ export default AppView
 起動して動作確認  
 
 ```
-npm start
+yarn start
 ```
 
 
@@ -366,7 +366,7 @@ class LoginStore extends ReduceStore<State, Action> {
   }
 
   reduce(state, action) {
-    let payload = action.payload;
+    const payload = action.payload;
 
     switch (action.type) {
       case 'value-changed':
@@ -458,7 +458,7 @@ class LoginStore extends ReduceStore<State, Action> {
   }
 
   reduce(prevState, action) {
-    let payload = action.payload;
+    const payload = action.payload;
 
     switch (action.type) {
       case LoginActionTypes.onChange:
@@ -478,7 +478,7 @@ export default new LoginStore();
 起動して動作確認  
 
 ```
-npm start
+yarn start
 ```
 
 `Email/Pass` を入力できるようになっていることを確認
@@ -507,7 +507,7 @@ class AppStore extends ReduceStore<State, Action> {
   }
 
   reduce(prevState, action) {
-    let payload = action.payload;
+    const payload = action.payload;
 
     switch (action.type) {
       case SessionActionTypes.loginSuccess:
@@ -588,7 +588,7 @@ export default AppView
 起動して動作確認  
 
 ```
-npm start
+yarn start
 ```
 
 フォームに値が入力できて、Loginボタンを押すとページ遷移してMainページが表示されれば成功です。  
@@ -602,16 +602,16 @@ npm start
 ## 動作確認方法
 
 - install node
-- install npm
-- npm install
-- npm start
+- install yarn
+- yarn install
+- yarn start
 
 
 
 ## FAQ  
 
 - `sh: react-scripts: command not found` というエラーがでる  
-  - `npm install` する
+  - `yarn install` する
 
 
 
