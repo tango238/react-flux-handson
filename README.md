@@ -117,7 +117,7 @@ export default App;
 yarn add flux
 ```
 
-`generator` ディレクトリをコピーして、 `generator/scaffold.sh` に実行権限を追加
+[generator](https://github.com/tango238/react-flux-handson/tree/master/generator) ディレクトリをコピーして、 `generator/scaffold.sh` に実行権限を追加
 
 ```
 chmod +x generator/scaffold.sh
@@ -168,7 +168,7 @@ ReactDOM.render(<AppContainer />, document.getElementById('root'));
 ```
 
 
-`core` ディレクトリを作成し、`core/AppDispatcher.js` をコピーする。
+[core](https://github.com/tango238/react-flux-handson/tree/master/src/core) ディレクトリを作成し、`core/AppDispatcher.js` をコピーする。
 
 コピー後、 `yarn start` を実行し画面が表示されることを確認。
 
